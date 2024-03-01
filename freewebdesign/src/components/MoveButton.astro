@@ -1,0 +1,11 @@
+---
+interface Props {
+	targetId: string
+}
+
+const { targetId } = Astro.props as Props
+---
+
+<button class="rounded-xl px-3 py-1 text-center transition-all hover:shadow-sm hover:scale-105">
+    <slot/>
+</button>
