@@ -1,8 +1,9 @@
 ---
-import heroimg from 'images/banner.png'
+import { Image } from 'astro:assets'
+import heroimg from '@img/banner.png'
 ---
 <section class="flex w-full  justify-center">
     <div class="relative w-[928px] ">
-      <img src="images/banner.png" alt="img">
+      <Image src={heroimg} alt="Web design">
     </div>
   </section>
