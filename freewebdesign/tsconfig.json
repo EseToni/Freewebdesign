@@ -5,6 +5,8 @@
 		"paths": {
 			"@components/*": ["components/*"],
 			"@sections/*": ["sections/*"],
+			"@img/*": ["static/img/*"],
+			"@icons/*": ["static/icons/*"],
 		},
 		"jsx": "react-jsx",
 		"jsxImportSource": "preact"
