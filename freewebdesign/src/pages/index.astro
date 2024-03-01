@@ -1,12 +1,12 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Hero from '../sections/Hero.astro'
+import Layout from "../layouts/Layout.astro"
+import Hero from "@sections/Hero.astro"
+import About from "@sections/About.astro"
 ---
 
 <Layout title="Welcome to Astro.">
-	<main>
-	<Hero></Hero>
+	<main class="mt-20 flex flex-col gap-8 pb-10">
+		<Hero />
+		<About />
 	</main>
 </Layout>
-
-
