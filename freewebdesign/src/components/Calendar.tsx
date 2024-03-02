@@ -16,21 +16,22 @@ const Calendar = () => {
 		0
 	).getDate()
 
-	const days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+	const days = ["L", "M", "X", "J", "V", "S", "D"]
+    const daysFull = ["Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado", "Domingo"]
 	const months = [
-		"January",
-		"February",
-		"March",
-		"April",
-		"May",
-		"June",
-		"July",
-		"August",
-		"September",
-		"October",
-		"November",
-		"December",
-	]
+        "Enero",
+        "Febrero",
+        "Marzo",
+        "Abril",
+        "Mayo",
+        "Junio",
+        "Julio",
+        "Agosto",
+        "Septiembre",
+        "Octubre",
+        "Noviembre",
+        "Diciembre",
+    ]
 	const hours = [
 		"10:00",
 		"10:30",
@@ -51,11 +52,13 @@ const Calendar = () => {
 		<div class="grid grid-cols-6 grid-rows-1 h-[325px] gap-x-2 ">
 			<div class="flex flex-col gap-4 col-span-4 ">
 				<div
-					class="flex gap-8 items-center text-zinc-900 justify-center w-auto"
+					class="flex  gap-8 items-center text-zinc-900 justify-center "
 					id="month"
 				>
 					<button
-						onClick={() => {
+                        class="disabled:fill-slate-500 fill-blue-600 bg-blue-100 rounded-full w-9 h-9 flex items-center justify-center transition-all disabled:bg-transparent"
+						disabled={selectedMonth.getMonth() === new Date().getMonth()}
+                        onClick={() => {
 							setSelectedMonth(
 								new Date(
 									selectedMonth.getFullYear(),
@@ -65,10 +68,16 @@ const Calendar = () => {
 							)
 						}}
 					>
-						{"<"}
+						<svg width="18" height="18" viewBox="0 0 24 24">
+							<path d="m9.55 12l7.35 7.35q.375.375.363.875t-.388.875q-.375.375-.875.375t-.875-.375l-7.7-7.675q-.3-.3-.45-.675t-.15-.75q0-.375.15-.75t.45-.675l7.7-7.7q.375-.375.888-.363t.887.388q.375.375.375.875t-.375.875z" />
+						</svg>
 					</button>
-					{months[selectedMonth.getMonth()]}
+					<span class="font-medium text-lg w-[120px] text-center">
+						{months[selectedMonth.getMonth()]} {selectedMonth.getFullYear()}
+					</span>
 					<button
+                        class="disabled:fill-slate-500 fill-blue-600 bg-blue-100 rounded-full w-9 h-9 flex items-center justify-center transition-all disabled:bg-transparent"
+						disabled={selectedMonth.getMonth() > new Date().getMonth() }
 						onClick={() => {
 							setSelectedMonth(
 								new Date(
@@ -79,14 +88,22 @@ const Calendar = () => {
 							)
 						}}
 					>
-						{">"}
+						<svg
+							width="24"
+							height="24"
+							viewBox="0 0 24 24"
+						>
+							<path
+								d="m14.475 12l-7.35-7.35q-.375-.375-.363-.888t.388-.887q.375-.375.888-.375t.887.375l7.675 7.7q.3.3.45.675t.15.75q0 .375-.15.75t-.45.675l-7.7 7.7q-.375.375-.875.363T7.15 21.1q-.375-.375-.375-.888t.375-.887z"
+							/>
+						</svg>
 					</button>
 				</div>
-				<div class="grid grid-cols-7 grid-rows-5 gap-y-1 text-center  items-center">
+				<div class="grid grid-cols-7 grid-rows-5 gap-y-1 gap-x-0 text-center place-items-center items-center">
 					{days.map((day) => (
-						<span class="text-lg">{day}</span>
+						<span class="">{day}</span>
 					))}
-					{Array.from({ length: firstDayOfMonth - 1 }, (_,) => (
+					{Array.from({ length: firstDayOfMonth - 1 }, (_) => (
 						<span></span>
 					))}
 					{Array.from({ length: lastDayOfMonth }, (_, i) => (
@@ -96,7 +113,7 @@ const Calendar = () => {
 								selectedDate.getDate() === i + 1 &&
 								selectedDate.getMonth() === selectedMonth.getMonth()
 									? " bg-blue-600 text-white shadow-md cursor-default"
-									: "bg-blue-100 text-blue-600"
+									: "bg-blue-100 text-blue-600 transition-all hover:bg-blue-200 "
 							}`}
 							onClick={() => {
 								setSelectedDate(
@@ -115,9 +132,11 @@ const Calendar = () => {
 			</div>
 			<div class="flex flex-col gap-2 col-span-2">
 				<div class="font-medium ">
-                    {console.log(selectedDate.getDay() - 1)}
-					{days[selectedDate.getDay() - 1 ] ?days[selectedDate.getDay() - 1] : "Sun" }, {months[selectedMonth.getMonth()]}{" "}
-					{selectedDate.getDate()} <span class="font-normal text-zinc-800">{selectedHour}</span>
+					{daysFull[selectedDate.getDay() - 1]
+						? daysFull[selectedDate.getDay() - 1]
+						: "Domingo"}
+					, {selectedDate.getDate()}{" "} de {months[selectedMonth.getMonth()]} 
+					<span class="font-normal text-zinc-800"> {selectedHour}</span>
 				</div>
 				<div class="flex  w-full gap-1 flex-col overflow-y-scroll  scrollOut">
 					<div class="flex flex-col gap-2  w-full justify-center items-center ">
@@ -129,13 +148,13 @@ const Calendar = () => {
 										<button
 											disabled={selectedHour === hour}
 											onClick={() => setSelectedHour(hour)}
-											class="flex w-full h-14 items-center justify-center font-bold   bg-white text-blue-600 border-2 rounded-xl border-blue-200 disabled:bg-gray-500 disabled:text-white disabled:border-transparent hover:bg-blue-600 hover:text-white hover:border-transparent   transition-all"
+											class="flex w-full h-12 items-center justify-center font-bold   bg-white text-blue-600 border-2 rounded-md border-blue-200 disabled:bg-gray-500 disabled:text-white disabled:border-transparent hover:bg-blue-600 hover:text-white hover:border-transparent   transition-all"
 										>
 											{hour}
 										</button>
 										{selectedHour === hour && (
-											<button class="bg-blue-600  text-white font-medium rounded-xl w-full h-14 transition-all hover:text-blue-600 hover:bg-transparent hover:shadow-md">
-												Next
+											<button class="bg-blue-600  text-white font-medium rounded-md w-full h-12 transition-all hover:text-blue-600 hover:bg-transparent hover:shadow-md">
+												Siguiente
 											</button>
 										)}
 									</div>
