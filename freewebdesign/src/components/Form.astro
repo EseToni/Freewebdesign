@@ -16,65 +16,67 @@
 	})
 </script>
 
-<form class="flex flex-col font-bold gap-3 w-2/3">
-	<h3 class="text-lg">Ingresa tus Datos</h3>
-	<label for="name" class="flex flex-col gap-2"
+<form class="flex flex-col font-bold gap-3 w-2/3 text-zinc-800">
+	<h3 class="text-lg tracking-wide font-black">Ingresa tus Datos</h3>
+	<label for="name" class="flex flex-col gap-2 text-sm"
 		>Nombre *
 		<input
 			type="text"
 			id="name"
 			name="name"
-			class="border-2 p-2 rounded-lg focus:outline-blue-500"
+			class="border-2 p-2 rounded-lg focus:outline-blue-600 text-slate-600 font-normal"
 			required
 		/>
 	</label>
-	<label for="email" class="flex flex-col gap-2"
+	<label for="email" class="flex flex-col gap-2 text-sm"
 		>Email *
 		<input
 			type="email"
 			id="email"
 			name="email"
-			class="border-2 p-2 rounded-lg focus:outline-blue-500"
+			class="border-2 p-2 rounded-lg focus:outline-blue-600 text-slate-600 font-normal"
 			required
 		/>
 	</label>
-	<div class="h-16">
+	<div class="h-16 flex justify-start items-center">
 		<button
 			id="btnGuess"
 			type="button"
-			class="bg-blue-500 text-white p-2 rounded-xl w-1/2 "
+			class="text-blue-600 border-2 border-blue-600 w-max rounded-2xl text-sm px-5 py-1.5 transition-all"
 		>
 			Añadir invitados</button
 		>
-		<label for="guess" id="contGuess" class="hidden flex-col font-semibold gap-2">
+		<label for="guess" id="contGuess" class="hidden flex-col text-sm gap-2 ">
 			Email de los invitados
 			<input
 				type="text"
 				id="guess"
 				name="date"
-				class="p-2 rounded-lg border-2 focus:outline-blue-500"
-				required
+				class="border-2 p-2 rounded-lg focus:outline-blue-600 text-slate-600 font-normal"
 			/>
 		</label>
 	</div>
-	<label for="platform" class="flex flex-col">
+	<label for="platform" class="flex flex-col gap-2 text-sm">
 		Plataforma
 		<div>
 			<select>
-				<option value="zoom">Zoom</option>
 				<option value="meet">Google Meet</option>
+				<option value="zoom">Zoom</option>
 				<option value="teams">Whatsap</option>
 			</select>
 		</div>
 	</label>
-	<label for="message" class="flex flex-col gap-2">
+	<label for="message" class="flex flex-col gap-2 text-sm">
 		Por favor, compartenos cualquier cosa que nos ayude a preparar tu meeting.
 		<textarea
 			id="message"
 			name="message"
-			class="border-2 rounded-xl resize-none"></textarea>
+			class="border-2 p-2 rounded-lg focus:outline-blue-500 text-slate-600 font-normal resize-none"
+		></textarea>
 	</label>
-	<button type="submit" class="bg-blue-500 text-white w-1/2 p-2 rounded-lg focus:outline-blue-500"
+	<button
+		type="submit"
+		class="mt-4 bg-blue-600 text-white w-max py-2 px-8 rounded-3xl hover:bg-blue-700 transition-all hover:scale-105"
 		>Enviar cita</button
 	>
 </form>
