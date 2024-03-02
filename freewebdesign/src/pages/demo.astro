@@ -11,17 +11,24 @@ import Form from "@components/Form.astro"
 			class="w-[1024px] h-[560px] grid grid-cols-8 grid-rows-1 gap-0 shadow-xl rounded-lg border-[1px]"
 		>
 			<section class="flex flex-col gap-6 border-r-2 p-10 pr-4 col-span-3">
-				<div
-					class="border-2 w-max p-1 rounded-full hover:border-transparent cursor-pointer hover:bg-blue-100"
-				>
-					<svg class="fill-blue-500" width="36" height="36" viewBox="0 0 24 24"
-						><path
-							d="m7.85 13l2.85 2.85q.3.3.288.7t-.288.7q-.3.3-.712.313t-.713-.288L4.7 12.7q-.3-.3-.3-.7t.3-.7l4.575-4.575q.3-.3.713-.287t.712.312q.275.3.288.7t-.288.7L7.85 11H19q.425 0 .713.288T20 12q0 .425-.288.713T19 13z"
-						></path></svg
+				<a href="/" target="_parent" class="w-max flex flex-row items-center justify-center gap-2 text-slate-500 tracking-wide">
+					<div
+						class="border-2 w-max p-1 rounded-full hover:border-transparent cursor-pointer hover:bg-blue-100"
 					>
-				</div>
+						<svg
+							class="fill-blue-500"
+							width="36"
+							height="36"
+							viewBox="0 0 24 24"
+							><path
+								d="m7.85 13l2.85 2.85q.3.3.288.7t-.288.7q-.3.3-.712.313t-.713-.288L4.7 12.7q-.3-.3-.3-.7t.3-.7l4.575-4.575q.3-.3.713-.287t.712.312q.275.3.288.7t-.288.7L7.85 11H19q.425 0 .713.288T20 12q0 .425-.288.713T19 13z"
+							></path></svg
+						>
+					</div>
+					Volver
+				</a>
 				<figure class="flex flex-col gap-2">
-					<Image src={profile} alt="Profile " class="w-20 h-20 rounded-full" />
+					<Image src={profile} alt="Profile" loading="eager" class="w-20 h-20 rounded-full" />
 
 					<figcaption class="flex flex-col gap-1">
 						<h2 class="font-medium text-slate-500">Eduardo Lopéz</h2>
@@ -30,7 +37,9 @@ import Form from "@components/Form.astro"
 						</h3>
 					</figcaption>
 				</figure>
-				<div class="flex flex-col text-zinc-600 fill-zinc-600  gap-4 stroke-zinc-600">
+				<div
+					class="flex flex-col text-zinc-600 fill-zinc-600 gap-4 stroke-zinc-600"
+				>
 					<span class="flex fle-row gap-2"
 						><svg width="24" height="24" viewBox="0 0 24 24"
 							><path
@@ -39,10 +48,7 @@ import Form from "@components/Form.astro"
 						>15 min</span
 					>
 					<span class="flex fle-row gap-2">
-						<svg
-							width="24"
-							height="24"
-							viewBox="0 0 48 48"
+						<svg width="24" height="24" viewBox="0 0 48 48"
 							><g fill="none" stroke-width="4"
 								><path
 									d="M24 44C35.0457 44 44 35.0457 44 24C44 12.9543 35.0457 4 24 4C12.9543 4 4 12.9543 4 24C4 35.0457 12.9543 44 24 44Z"
