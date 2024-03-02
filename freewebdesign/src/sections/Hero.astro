@@ -1,9 +1,19 @@
 ---
 import { Image } from 'astro:assets'
 import heroimg from '@img/banner.png'
+import heroimg2 from '@img/banner2.png'
 ---
-<section class="flex w-full  justify-center">
-    <div class="relative w-[928px] ">
-      <Image src={heroimg} alt="Web design">
+<section class="flex w-full justify-center">
+  <div class="relative w-[928px] rounded-3xl overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black w-full h-full"></div>
+    <Image src={heroimg2} alt="Image by rawpixel.com on Freepik"  />
+    <div>
+      <h1 class="absolute bottom-32 left-16 px-4 text-white py-2 rounded-md font-bold text-[42px]">Custom web design that's as unique as your business</h1>
     </div>
-  </section>
+    <div>
+      <button class="absolute bottom-16 left-16 bg-blue-600 text-white px-5 py-3 rounded-xl font-bold text-lg hover:bg-blue-700 hover:scale-105 transition duration-300">
+      Get Free Consultation
+    </button>
+  </div>
+  </div>
+</section>

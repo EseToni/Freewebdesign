@@ -1,11 +1,11 @@
 ---
 import { Image } from "astro:assets"
 import profile from "@img/profile.png"
-import Layaout from "../layouts/Layout.astro"
+import Layout from "../layouts/Layout.astro"
 import Calendar from "@components/Calendar.tsx"
 ---
 
-<Layaout title="Agency date">
+<Layout title="Agency date">
 	<main class="mt-24 w-full flex justify-center">
 		<div
 			class="w-[1024px] grid grid-cols-6 grid-rows-1 gap-0 shadow-xl rounded-xl"
@@ -31,7 +31,7 @@ import Calendar from "@components/Calendar.tsx"
 			</section>
 		</div>
 	</main>
-</Layaout>
+</Layout>
 
 <!-- <script>
 	const today = new Date()
