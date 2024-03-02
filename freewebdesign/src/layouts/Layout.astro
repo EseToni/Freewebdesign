@@ -1,12 +1,12 @@
 ---
 interface Props {
-	title: string;
+	title: string
 }
 
-const { title } = Astro.props;
+const { title } = Astro.props
 
 import "@fontsource-variable/inter"
-import Navbar from '@components/Navbar.astro';
+import Navbar from "@components/Navbar.astro"
 ---
 
 <!doctype html>
@@ -25,14 +25,38 @@ import Navbar from '@components/Navbar.astro';
 	</body>
 </html>
 <style is:global>
-	:root{
+	:root {
 		font-size: 16px;
 	}
 
-
+	.selected {
+		background-color: #2563eb;
+		color: #fff;
+		box-shadow:
+			0 10px 15px -3px rgb(0 0 0 / 0.1),
+			0 4px 6px -4px rgb(0 0 0 / 0.1);
+	}
+	.selected:hover {
+		background-color: #2563eb;
+		color: #fff;
+		cursor: default;
+	}
+	.scrollOut {
+		scrollbar-width: thin;
+		scrollbar-color: transparent transparent;
+		
+	}
+	.scrollOut ::-webkit-scrollbar {
+		widows: 0.5em;
+	}
+	.scrollOut ::-webkit-scrollbar-thumb {
+		background-color: transparent;
+	}
+	.scrollOut ::-webkit-scrollbar-track {
+		background-color: transparent;
+	}
 	code {
 		font-family:
-			
 			Courier New,
 			monospace;
 	}
