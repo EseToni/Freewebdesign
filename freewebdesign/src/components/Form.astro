@@ -17,7 +17,7 @@
 </script>
 
 <form class="flex flex-col font-bold gap-3 w-2/3 text-zinc-800">
-	<h3 class="text-lg tracking-wide font-black">Ingresa tus Datos</h3>
+	<h3 class="text-lg tracking-wide font-black text-zinc-900">Ingresa tus Datos</h3>
 	<label for="name" class="flex flex-col gap-2 text-sm"
 		>Nombre *
 		<input
@@ -56,17 +56,17 @@
 			/>
 		</label>
 	</div>
-	<label for="platform" class="flex flex-col gap-2 text-sm">
+	<label for="platform" class="flex flex-col gap-4 text-sm">
 		Plataforma
 		<div>
-			<select>
-				<option value="meet">Google Meet</option>
-				<option value="zoom">Zoom</option>
-				<option value="teams">Whatsap</option>
+			<select class="border-2 rounded-lg py-1 pr-4 pl-3">
+				<option value="meet">🟧 Google Meet</option>
+				<option value="zoom">🟦 Zoom</option>
+				<option value="teams">🟩 Whatsap</option>
 			</select>
 		</div>
 	</label>
-	<label for="message" class="flex flex-col gap-2 text-sm">
+	<label for="message" class="flex flex-col gap-2 text-sm text-zinc-900">
 		Por favor, compartenos cualquier cosa que nos ayude a preparar tu meeting.
 		<textarea
 			id="message"
