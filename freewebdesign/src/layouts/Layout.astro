@@ -6,7 +6,6 @@ interface Props {
 const { title } = Astro.props
 
 import "@fontsource-variable/inter"
-import Navbar from "@components/Navbar.astro"
 ---
 
 <!doctype html>
@@ -20,7 +19,6 @@ import Navbar from "@components/Navbar.astro"
 		<title>{title}</title>
 	</head>
 	<body>
-		<Navbar />
 		<slot />
 	</body>
 </html>
@@ -44,7 +42,7 @@ import Navbar from "@components/Navbar.astro"
 	.scrollOut {
 		scrollbar-width: thin;
 		scrollbar-color: transparent transparent;
-		
+
 	}
 	.scrollOut ::-webkit-scrollbar {
 		widows: 0.5em;

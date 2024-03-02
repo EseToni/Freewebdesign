@@ -1,0 +1,80 @@
+---
+
+---
+
+<script>
+	const handleClick = () => {
+		const btnGuess = document.getElementById("btnGuess")
+	}
+	const btnGuess = document.getElementById("btnGuess")
+	btnGuess.addEventListener("click", () => {
+		btnGuess.classList.add("hidden")
+		const contGuess = document.getElementById("contGuess")
+		contGuess.classList.toggle("hidden")
+		contGuess.classList.add("flex")
+		console.log("click")
+	})
+</script>
+
+<form class="flex flex-col font-bold gap-3 w-2/3">
+	<h3 class="text-lg">Ingresa tus Datos</h3>
+	<label for="name" class="flex flex-col gap-2"
+		>Nombre *
+		<input
+			type="text"
+			id="name"
+			name="name"
+			class="border-2 p-2 rounded-lg focus:outline-blue-500"
+			required
+		/>
+	</label>
+	<label for="email" class="flex flex-col gap-2"
+		>Email *
+		<input
+			type="email"
+			id="email"
+			name="email"
+			class="border-2 p-2 rounded-lg focus:outline-blue-500"
+			required
+		/>
+	</label>
+	<div class="h-16">
+		<button
+			id="btnGuess"
+			type="button"
+			class="bg-blue-500 text-white p-2 rounded-xl w-1/2 "
+		>
+			Añadir invitados</button
+		>
+		<label for="guess" id="contGuess" class="hidden flex-col font-semibold gap-2">
+			Email de los invitados
+			<input
+				type="text"
+				id="guess"
+				name="date"
+				class="p-2 rounded-lg border-2 focus:outline-blue-500"
+				required
+			/>
+		</label>
+	</div>
+	<label for="platform" class="flex flex-col">
+		Plataforma
+		<div>
+			<select>
+				<option value="zoom">Zoom</option>
+				<option value="meet">Google Meet</option>
+				<option value="teams">Whatsap</option>
+			</select>
+		</div>
+	</label>
+	<label for="message" class="flex flex-col gap-2">
+		Por favor, compartenos cualquier cosa que nos ayude a preparar tu meeting.
+		<textarea
+			id="message"
+			name="message"
+			class="border-2 rounded-xl resize-none"></textarea>
+	</label>
+	<button type="submit" class="bg-blue-500 text-white w-1/2 p-2 rounded-lg focus:outline-blue-500"
+		>Enviar cita</button
+	>
+</form>
