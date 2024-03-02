@@ -2,6 +2,7 @@
 import { Image } from "astro:assets"
 import profile from "@img/profile.png"
 import Layaout from "../layouts/Layout.astro"
+import Calendar from "@components/Calendar.tsx"
 ---
 
 <Layaout title="Agency date">
@@ -20,18 +21,9 @@ import Layaout from "../layouts/Layout.astro"
 				</figure>
 				<span>15 min</span>
 			</section>
-			<section class="rounded-xl col-span-4 p-10 flex flex-col gap-4">
+			<section class="rounded-xl col-span-4 px-6 py-4 flex flex-col gap-6">
 				<h2 class="text-xl font-bold">Select a Date & Time</h2>
-				<div class="grid grid-cols-6 grid-rows-1 gap-x-2">
-					<div class="flex col-span-4">
-						<div
-							class="grid grid-cols-7 grid-rows-5 gap-x-4 gap-y-2 text-center"
-							id="calendar"
-						>
-						</div>
-					</div>
-					<div class="flex col-span-2 overflow-y-scroll">horario</div>
-				</div>
+				<Calendar client:idle />
 				<div>
 					<h4>Time zone</h4>
 					<p>Central European time</p>
@@ -41,21 +33,129 @@ import Layaout from "../layouts/Layout.astro"
 	</main>
 </Layaout>
 
-<script>
+<!-- <script>
 	const today = new Date()
 	let currentMonth = today.getMonth()
 	let currentYear = today.getFullYear()
+
+	const generateMonth = () => {
+		const month = document.getElementById("month")
+		if (!month) throw new Error("Month not found")
+
+		month.innerHTML = ""
+
+		const prev = document.createElement("button")
+		prev.textContent = "<"
+		prev.disabled =
+			currentMonth === today.getMonth() && currentYear === today.getFullYear()
+		prev.classList.add(
+			"flex",
+			"shadow-md",
+			"rounded-full",
+			"w-8",
+			"h-8",
+			"font-bold",
+			"text-lg",
+			"justify-center",
+			"text-center",
+			"bg-blue-100",
+			"text-blue-600",
+			"hover:bg-blue-600",
+			"hover:text-blue-100",
+			"disabled:bg-transparent",
+			"disabled:text-gray-400",
+			"disabled:cursor-default",
+			"disabled:shadow-none",
+			"disabled:hover:bg-transparent",
+			"disabled:hover:text-gray-400"
+		)
+		prev.addEventListener("click", () => {
+			if (currentMonth === 0) {
+				currentMonth = 11
+				currentYear--
+			} else {
+				currentMonth--
+			}
+			generateCalendar()
+			generateMonth()
+		})
+		month.appendChild(prev)
+
+		const span = document.createElement("span")
+		span.textContent = `${currentMonth + 1}/${currentYear}`
+		month.appendChild(span)
+
+		const next = document.createElement("button")
+		next.textContent = ">"
+		next.disabled =
+			currentMonth > today.getMonth() && currentYear === today.getFullYear()
+        next.classList.add(
+			"flex",
+			"shadow-md",
+			"rounded-full",
+			"w-8",
+			"h-8",
+			"font-bold",
+			"text-lg",
+			"justify-center",
+			"text-center",
+            "bg-blue-100",
+            "text-blue-600",
+            "hover:bg-blue-600",
+            "hover:text-blue-100",
+            "disabled:bg-transparent",
+            "disabled:text-gray-400",
+            "disabled:cursor-default",
+            "disabled:shadow-none",
+            "disabled:hover:bg-transparent",
+            "disabled:hover:text-gray-400"
+		)
+
+		next.addEventListener("click", () => {
+			if (currentMonth === 11) {
+				currentMonth = 0
+				currentYear++
+			} else {
+				currentMonth++
+			}
+
+			generateCalendar()
+			generateMonth()
+		})
+		month.appendChild(next)
+	}
+	generateMonth()
 
 	const generateCalendar = () => {
 		const calendar = document.getElementById("calendar")
 		if (!calendar) {
 			throw new Error("Calendar not found")
 		}
+		calendar.innerHTML = ""
+
 		const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate()
 		const firstDay = new Date(currentYear, currentMonth, 1).getDay()
-		const lastDay = new Date(currentYear, currentMonth, daysInMonth).getDay()
-
 		//--- days---
+
+		function selectDate(cell, date) {
+			// Deseleccionar todos los días
+			const selectedCells = document.querySelectorAll(".selected")
+			selectedCells.forEach((selectedCell) => {
+				selectedCell.classList.remove("selected")
+			})
+
+			// Seleccionar el día clicado
+			cell.classList.add("selected")
+			const time = document.getElementById("time")
+			if (!time) throw new Error("Time not found")
+			time.innerHTML = ""
+			const span = document.createElement("span")
+
+			span.textContent = `${date}/${currentMonth + 1}/${currentYear}`
+
+			time.appendChild(span)
+			// alert(`Fecha seleccionada: ${date}/${currentMonth + 1}/${currentYear}`)
+		}
 
 		const daysOfWeek = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
 
@@ -75,6 +175,7 @@ import Layaout from "../layouts/Layout.astro"
 		for (let i = 1; i <= daysInMonth; i++) {
 			const button = document.createElement("button")
 			button.textContent = i.toString()
+			button.addEventListener("click", (e) => selectDate(e.target, i))
 			button.classList.add(
 				"flex-1",
 				"shadow-md",
@@ -88,13 +189,26 @@ import Layaout from "../layouts/Layout.astro"
 				button.classList.add("text-gray-400")
 				button.disabled = true
 			} else if (i === today) {
-				button.classList.add("bg-blue-500", "text-white", "shadow-xl")
+				button.classList.add(
+					"bg-blue-50",
+					"shadow-none",
+					"text-blue-500",
+					"transition-all",
+					"hover:bg-blue-100",
+					"selected"
+				)
 			} else {
-				button.classList.add("bg-blue-50", "shadow-none", "text-blue-500" ,"transition-all", "hover:bg-blue-100")
+				button.classList.add(
+					"bg-blue-50",
+					"shadow-none",
+					"text-blue-500",
+					"transition-all",
+					"hover:bg-blue-100"
+				)
 			}
 
 			calendar.appendChild(button)
 		}
 	}
 	generateCalendar()
-</script>
+</script> -->
