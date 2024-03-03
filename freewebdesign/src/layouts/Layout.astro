@@ -56,6 +56,23 @@ import "@fontsource-variable/inter"
 	.textShadow {
 		text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
 	}
+	@keyframes animate_nav {
+		0% {
+			backdrop-filter: blur(10px);
+			background: transparent;
+		}
+		100% {
+			backdrop-filter: blur(0px);
+			background: #f7fafc;
+			box-shadow: 0 1px 8px 0px rgba(0, 0, 0, 0.1);
+		}
+	}
+	#navbar {
+		animation: animate_nav linear both;
+		animation-timeline: scroll();
+		animation-range: 0 630px;
+		border-bottom: 2px solid rgb(167, 167, 167, 0.3);
+	}
 	code {
 		font-family:
 			Courier New,
