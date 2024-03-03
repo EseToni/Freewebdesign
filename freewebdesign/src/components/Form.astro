@@ -3,19 +3,19 @@
 ---
 
 <script>
-	const handleClick = () => {
-		const btnGuess = document.getElementById("btnGuess")
-	}
 	const btnGuess = document.getElementById("btnGuess")
-	if (!btnGuess) return 
-	btnGuess.addEventListener("click", () => {
-		btnGuess.classList.add("hidden")
-		const contGuess = document.getElementById("contGuess")
-		if (!contGuess) return 
-		contGuess.classList.toggle("hidden")
-		contGuess.classList.add("flex")
-		console.log("click")
-	})
+	
+	if (btnGuess){
+		btnGuess.addEventListener("click", () => {
+			btnGuess.classList.add("hidden")
+			const contGuess = document.getElementById("contGuess")
+			if (contGuess) {
+				contGuess.classList.toggle("hidden")
+				contGuess.classList.add("flex")
+				console.log("click")
+			}
+		})
+	}
 </script>
 
 <form class="flex flex-col font-bold gap-3 w-2/3 text-zinc-800">
