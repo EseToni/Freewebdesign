@@ -11,35 +11,35 @@ import { Image } from "astro:assets"
 	<div class="relative w-full lg:w-[928px] h-[680px]  grid grid-cols-6 grid-rows-12 lg:grid-cols-10 lg:grid-rows-10 gap-4 textShadow">
         <figure class="col-span-6 row-span-3 lg:col-span-4 lg:row-span-4 rounded-xl shadow-lg relative flex flex-col " >
             <div class="absolute z-10 bg-gradient-to-b from-transparent to-[rgb(1,1,1,0.7)] w-full h-full rounded-xl" />
-            <Image src={bento1} alt="diseño web" class="rounded-xl absolute w-full h-full object-cover" />
-            <div class="absolute z-20 w-full h-full p-4 justify-end  flex flex-col gap-1">
+            <Image loading={"eager"} src={bento1} alt="diseño web" class="rounded-xl absolute w-full h-full object-cover" />
+            <figure class="absolute z-20 w-full h-full p-4 justify-end  flex flex-col gap-1">
                 <figcaption class=" z-20 bottom-4 left-4 text-white text-2xl font-bold tracking-widest">Trato personal</figcaption>
                 <p class=" z-20 bottom-0 left-4 text-white text-lg">Te agendamos tu cita, y hablamos <strong>personalmente</strong> de tu proyecto.</p>
-            </div>
+            </figure>
         </figure>
         <article class="col-span-6 row-span-4 lg:col-span-6 lg:row-span-6  rounded-xl shadow-lg relative gap-1" >
             <div class="absolute z-10 bg-gradient-to-b from-transparent to-[rgb(1,1,1,0.7)] w-full h-full rounded-xl" />
-            <Image src={bento2} alt="diseño web" class="rounded-xl absolute w-full h-full object-cover" />
-            <div class="absolute z-20 w-full h-full p-4 justify-end  flex flex-col">
+            <Image loading={"eager"} src={bento2} alt="diseño web" class="rounded-xl absolute w-full h-full object-cover" />
+            <figure class="absolute z-20 w-full h-full p-4 justify-end  flex flex-col">
                 <figcaption class=" z-20 bottom-4 left-4 text-white text-2xl font-bold tracking-widest">Servidores dedicado</figcaption>
                 <p class=" z-20 bottom-0 left-4 text-white text-lg text-balance">Disfruta de tu <strong>alojamiento</strong> con servidores de europa con asistencia <strong>24/7</strong></p>
-            </div>
+            </figure>
         </article>
         <article class="col-span-6 row-span-3 lg:col-span-4 lg:row-span-6  rounded-xl shadow-lg relative gap-1 text-center" >
             <div class="absolute z-10 bg-gradient-to-b from-transparent to-[rgb(1,1,1,0.7)] w-full h-full rounded-xl" />
-            <Image src={bento3} alt="diseño web" class="rounded-xl absolute w-full h-full object-cover" />
-            <div class="absolute z-20 w-full h-full p-4 justify-end  flex flex-col">
+            <Image loading={"eager"} src={bento3} alt="diseño web" class="rounded-xl absolute w-full h-full object-cover" />
+            <figure class="absolute z-20 w-full h-full p-4 justify-end  flex flex-col">
                 <figcaption class=" z-20 bottom-4 left-4 text-white text-2xl font-bold tracking-widest">SEO</figcaption>
                 <p class=" z-20 bottom-0 left-4 text-white text-lg text-balance">Te proporcionamos el mejor <strong>SEO</strong>, a medida de tus necesidades.</p>
-            </div>
+            </figure>
         </article>
         <article class="col-span-6 row-span-3 lg:col-span-6 lg:row-span-4 rounded-xl shadow-lg relative gap-1 " >
             <div class="absolute z-10 bg-gradient-to-b from-transparent to-[rgb(1,1,1,0.7)] w-full h-full rounded-xl" />
-            <Image src={bento4} alt="diseño web" class="rounded-xl absolute w-full h-full object-cover" />
-            <div class="absolute z-20 w-full h-full p-4 justify-end  flex flex-col">
+            <Image loading={"eager"} src={bento4} alt="diseño web" class="rounded-xl absolute w-full h-full object-cover" />
+            <figure class="absolute z-20 w-full h-full p-4 justify-end  flex flex-col">
                 <figcaption class=" z-20 bottom-4 left-4 text-white text-2xl font-bold tracking-widest">Optimización</figcaption>
                 <p class=" z-20 bottom-0 left-4 text-white text-lg text-balance">Ingeniería de paginas web con frameworks de <strong>vanguardia</strong></p>
-            </div>
+            </figure>
         </article>
     </div>
 </section>
