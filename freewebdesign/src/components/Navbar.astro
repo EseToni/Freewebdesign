@@ -1,4 +1,6 @@
 ---
+import logo_black from "@icons/logo_black.png"
+import { Image } from "astro:assets"
 ---
 
 <nav
@@ -7,16 +9,16 @@
 >
 	<div class="flex fle-row justify-between w-[1080px] px-4 lg:px-0 ">
 		<a
-			class="flex flex-row gap-4 items-center "
+			class="flex flex-row gap-2 items-center "
 			href="https://github.com/EseToni/Freewebdesign"
 			target="_blank"
 		>
-			<svg width="22" height="22" viewBox="0 0 256 256"
-				><path
-					fill="#0D141C"
-					d="M208 112a32.06 32.06 0 0 0-31 24h-25a40.19 40.19 0 0 1-32-16L93.69 84.92A32 32 0 1 0 72 87v82a32 32 0 1 0 16 0v-65l19.2 25.6A56.26 56.26 0 0 0 152 152h25a32 32 0 1 0 31-40M96 200a16 16 0 1 1-16-16a16 16 0 0 1 16 16m112-40a16 16 0 0 1-16-16a16 16 0 1 1 16 16"
-				></path></svg
-			>
+			<Image
+				loading={"eager"}
+				class="w-7 h-7"
+				src={logo_black}
+				alt="Freewebdesign"
+			/>
 
 			<h4 class="font-bold text-[#0D141C] text-xl">Freewebdesign</h4>
 		</a>
@@ -26,7 +28,7 @@
 				href="/demo"
 				target="_parent"
 				class="bg-[#4739b9] text-white  px-4 py-1 rounded-lg hover:text-[#4739b9] hover:bg-transparent hover:shadow-md transition-all"
-				>Contact</a
+				>Contacto</a
 			>
 	</div>
 </nav>
