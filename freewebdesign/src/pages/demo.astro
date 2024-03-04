@@ -4,19 +4,18 @@ import profile from "@img/profile.png"
 import Layout from "../layouts/Layout.astro"
 import Form from "@components/Form.astro"
 ---
-
 <Layout title="Agency date">
-	<main class="absolute w-full flex justify-center h-full items-center align-middle">
+	<main class="absolute w-full flex justify-center h-full md:items-center align-middle">
 		<div
-			class="w-[1024px] h-[560px] grid grid-cols-8 grid-rows-1 gap-0 shadow-xl rounded-lg border-[1px]"
+			class="w-[1024px] h-[560px] flex flex-col md:grid md:grid-cols-8 md:grid-rows-1 gap-0 md:shadow-xl rounded-lg border-[1px]"
 		>
-			<section class="flex flex-col gap-6 border-r-2 p-10 pr-4 col-span-3">
-				<a href="/" target="_parent" class="w-max flex flex-row items-center justify-center gap-2 text-slate-500 tracking-wide">
+			<section class="flex flex-col md:gap-6 border-r-2 p-8  col-span-3">
+				<a href="/" target="_parent" class="w-max flex flex-row items-center justify-center gap-2 pb-4 text-slate-500 tracking-wide">
 					<div
-						class="border-2 w-max p-1 rounded-full hover:border-transparent cursor-pointer hover:bg-blue-100"
+						class="border-2 w-max p-1 rounded-full hover:border-transparent cursor-pointer hover:bg-[#4839b923]"
 					>
 						<svg
-							class="fill-blue-500"
+							class="fill-[#4739b9]"
 							width="36"
 							height="36"
 							viewBox="0 0 24 24"
@@ -28,11 +27,11 @@ import Form from "@components/Form.astro"
 					Volver
 				</a>
 				<figure class="flex flex-col gap-2">
-					<Image src={profile} alt="Profile" loading="eager" class="w-20 h-20 rounded-full" />
+					
 
 					<figcaption class="flex flex-col gap-1">
 						<h2 class="font-medium text-slate-500">Eduardo Lopéz</h2>
-						<h3 class="font-black text-xl tracking-wide">
+						<h3 class="font-black text-xl tracking-wide pt-4">
 							15 Minutos con Eduardo Project Manager
 						</h3>
 					</figcaption>
@@ -40,7 +39,7 @@ import Form from "@components/Form.astro"
 				<div
 					class="flex flex-col text-zinc-600 fill-zinc-600 gap-4 stroke-zinc-600"
 				>
-					<span class="flex fle-row gap-2"
+					<span class="flex fle-row gap-2 pt-4 md:pt-0"
 						><svg width="24" height="24" viewBox="0 0 24 24"
 							><path
 								d="M12 20c4.4 0 8-3.6 8-8s-3.6-8-8-8s-8 3.6-8 8s3.6 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10S2 17.5 2 12S6.5 2 12 2m5 11.9l-.7 1.3l-5.3-2.9V7h1.5v4.4z"
