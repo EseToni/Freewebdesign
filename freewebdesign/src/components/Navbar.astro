@@ -1,14 +1,13 @@
 ---
-import MoveButton from "./MoveButton.astro"
 ---
 
 <nav
 	id="navbar"
-	class="flex justify-center py-3 md:py-4  border-b-2 z-50 bg-white fixed top-0 w-full left-0 navbar md:px-8 xl:px-0 px-10 navbar"
+	class="flex justify-center py-3 lg:py-4  border-b-2 z-50 bg-white fixed top-0 w-full left-0  lg:px-8 xl:px-0  navbar"
 >
-	<div class="flex fle-row justify-between w-[1080px]">
+	<div class="flex fle-row justify-between w-[1080px] px-4 lg:px-0 ">
 		<a
-			class="md:flex flex-row gap-4 items-center hidden"
+			class="flex flex-row gap-4 items-center "
 			href="https://github.com/EseToni/Freewebdesign"
 			target="_blank"
 		>
@@ -19,18 +18,15 @@ import MoveButton from "./MoveButton.astro"
 				></path></svg
 			>
 
-			<h4 class="font-bold text-[#0D141C] text-xl">FreeWebsdesign</h4>
+			<h4 class="font-bold text-[#0D141C] text-xl">Freewebdesign</h4>
 		</a>
 
-		<div
-			class="flex flex-row gap-4 md:gap-8 font-medium w-full md:w-auto text-[#0D141C] justify-center text-base items-center"
-		>
+
 			<a
 				href="/demo"
 				target="_parent"
-				class="bg-[#4739b9] text-white px-4 py-1 rounded-lg hover:text-[#4739b9] hover:bg-transparent hover:shadow-md transition-all"
+				class="bg-[#4739b9] text-white  px-4 py-1 rounded-lg hover:text-[#4739b9] hover:bg-transparent hover:shadow-md transition-all"
 				>Contact</a
 			>
-		</div>
 	</div>
 </nav>
