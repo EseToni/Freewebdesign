@@ -8,24 +8,24 @@ import { Image } from "astro:assets"
 ---
 
 <section class="flex w-full justify-center">
-	<div class="relative w-[928px] h-[480px] grid grid-cols-10 grid-rows-10 gap-4 textShadow">
-        <figure class="col-span-4 row-span-4 rounded-xl shadow-lg relative flex flex-col" >
+	<div class="relative w-full lg:w-[928px] h-[680px]  grid grid-cols-6 grid-rows-12 lg:grid-cols-10 lg:grid-rows-10 gap-4 textShadow">
+        <figure class="col-span-6 row-span-3 lg:col-span-4 lg:row-span-4 rounded-xl shadow-lg relative flex flex-col " >
             <div class="absolute z-10 bg-gradient-to-b from-transparent to-[rgb(1,1,1,0.7)] w-full h-full rounded-xl" />
             <Image src={bento1} alt="diseño web" class="rounded-xl absolute w-full h-full object-cover" />
-            <div class="absolute z-20 w-full h-full p-4 justify-end  flex flex-col">
+            <div class="absolute z-20 w-full h-full p-4 justify-end  flex flex-col gap-1">
                 <figcaption class=" z-20 bottom-4 left-4 text-white text-2xl font-bold tracking-widest">Trato personal</figcaption>
-                <p class=" z-20 bottom-0 left-4 text-white text-lg">Te agendamos tu cita.</p>
+                <p class=" z-20 bottom-0 left-4 text-white text-lg">Te agendamos tu cita, y hablamos <strong>personalmente</strong> de tu proyecto.</p>
             </div>
         </figure>
-        <article class="col-span-6 row-span-6  rounded-xl shadow-lg relative" >
+        <article class="col-span-6 row-span-4 lg:col-span-6 lg:row-span-6  rounded-xl shadow-lg relative gap-1" >
             <div class="absolute z-10 bg-gradient-to-b from-transparent to-[rgb(1,1,1,0.7)] w-full h-full rounded-xl" />
             <Image src={bento2} alt="diseño web" class="rounded-xl absolute w-full h-full object-cover" />
             <div class="absolute z-20 w-full h-full p-4 justify-end  flex flex-col">
                 <figcaption class=" z-20 bottom-4 left-4 text-white text-2xl font-bold tracking-widest">Servidores dedicado</figcaption>
-                <p class=" z-20 bottom-0 left-4 text-white text-lg text-balance">Disfruta de tu <strong>alojamiento</strong> en servidores de europa con asistencia <strong>24/7</strong></p>
+                <p class=" z-20 bottom-0 left-4 text-white text-lg text-balance">Disfruta de tu <strong>alojamiento</strong> con servidores de europa con asistencia <strong>24/7</strong></p>
             </div>
         </article>
-        <article class="col-span-4 row-span-6  rounded-xl shadow-lg relative" >
+        <article class="col-span-6 row-span-3 lg:col-span-4 lg:row-span-6  rounded-xl shadow-lg relative gap-1 text-center" >
             <div class="absolute z-10 bg-gradient-to-b from-transparent to-[rgb(1,1,1,0.7)] w-full h-full rounded-xl" />
             <Image src={bento3} alt="diseño web" class="rounded-xl absolute w-full h-full object-cover" />
             <div class="absolute z-20 w-full h-full p-4 justify-end  flex flex-col">
@@ -33,7 +33,7 @@ import { Image } from "astro:assets"
                 <p class=" z-20 bottom-0 left-4 text-white text-lg text-balance">Te proporcionamos el mejor <strong>SEO</strong>, a medida de tus necesidades.</p>
             </div>
         </article>
-        <article class="col-span-6 row-span-4 rounded-xl shadow-lg relative" >
+        <article class="col-span-6 row-span-3 lg:col-span-6 lg:row-span-4 rounded-xl shadow-lg relative gap-1 " >
             <div class="absolute z-10 bg-gradient-to-b from-transparent to-[rgb(1,1,1,0.7)] w-full h-full rounded-xl" />
             <Image src={bento4} alt="diseño web" class="rounded-xl absolute w-full h-full object-cover" />
             <div class="absolute z-20 w-full h-full p-4 justify-end  flex flex-col">

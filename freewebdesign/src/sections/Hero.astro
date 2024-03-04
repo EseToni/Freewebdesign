@@ -4,16 +4,16 @@ import heroimg from '@img/banner.png'
 import heroimg2 from '@img/banner3.png'
 ---
 <section class="flex w-full justify-center">
-  <div class="relative w-[928px] rounded-3xl overflow-hidden">
+  <div class="relative w-[928px] lg:h-auto h-[300px] rounded-3xl overflow-hidden">
     <div class="absolute inset-0 bg-gradient-to-b to-[rgb(1,1,1,0.5)] from-transparent  w-full h-full"></div>
-    <Image src={heroimg2} alt="Web design free" loading="eager" class="" /> 
+    <Image src={heroimg2} alt="Web design free" loading="eager" class="h-full w-full object-cover" /> 
     <!-- Image by rawpixel.com on Freepik -->
     <div class="">
-      <h1 class="absolute  bottom-32 left-12 px-4 textShadow text-white py-2 rounded-md font-bold text-[42px] ">Un diseño de pagina web unico, como tu negocio</h1>
+      <h1 class="absolute bottom-1/3  lg:bottom-32 left-12  textShadow text-white py-2 font-bold text-4xl lg:text-[42px] ">Un diseño de pagina web unico, como tu negocio</h1>
     </div>
     <div>
       <a href="/demo" target="_parent">
-        <button class="absolute bottom-16 left-16 bg-[#4739b9] text-white px-5 py-3 rounded-xl font-bold text-lg hover:bg-[#4e42ac] hover:scale-105 transition duration-300">
+        <button class="absolute bottom-8 left-12 bg-[#4739b9] text-white px-3 py-2 lg:px-5 lg:py-3 rounded-xl font-bold text-lg hover:bg-[#4e42ac] hover:scale-105 transition duration-300">
          Consulta gratuita
         </button>
       </a>

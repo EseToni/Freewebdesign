@@ -8,6 +8,7 @@ method="POST"
 class="flex flex-col font-bold gap-3  text-zinc-800"
 >
 
+<<<<<<< HEAD
 <h3 class="text-lg tracking-wide font-black text-zinc-900">Ingresa tus Datos</h3>
 <label for="name" class="flex flex-col gap-2 text-sm"> Nombre *</label>
 
@@ -52,3 +53,49 @@ class="mt-4 bg-[#4739b9] text-white w-full py-2 px-8 rounded-3xl hover:bg-[#4e42
 >Enviar cita</button
 >
 </form>
+=======
+	<h3 class="text-lg tracking-wide font-black text-zinc-900">Ingresa tus Datos</h3>
+	<label for="name" class="flex flex-col gap-2 text-sm"> Nombre *</label>
+		
+		<input
+			type="text"
+			id="name"
+			name="name"
+			class="border-2 p-2 rounded-lg focus:outline-[#4739b9] text-slate-600 font-normal"
+			required
+		/>
+	
+	<label for="email" class="flex flex-col gap-2 text-sm">Email *</label>
+		
+		<input
+			type="email"
+			id="email"
+			name="email"
+			class="border-2 p-2 rounded-lg focus:outline-[#4739b9] text-slate-600 font-normal"
+			required
+		/>
+	
+	
+	<label for="platform"  class="flex flex-col gap-4 text-sm">Plataforma</label>
+		
+			<select name="platform" class="border-2 rounded-lg py-1 pr-4 pl-3">
+				<option value="meet">🟧 Google Meet</option>
+				<option value="zoom">🟦 Zoom</option>
+				<option value="teams">🟦 WhatsApp</option>
+			</select>
+	
+	<label for="message" class="flex flex-col gap-2 text-sm text-zinc-900"> Por favor, compartenos cualquier cosa que nos ayude a preparar tu meeting.</label>
+		
+		<textarea
+			id="message"
+			name="message"
+			class="border-2 p-2 rounded-lg focus:outline-blue-500 text-slate-600 font-normal resize-none"
+		></textarea>
+	
+	<button
+		type="submit"
+		class="mt-4 bg-[#4739b9] text-white w-max py-2 px-8 rounded-3xl hover:bg-[#4e42ac] transition-all hover:scale-105"
+		>Enviar cita</button
+	>
+</form>
+>>>>>>> 2b999d29d3d84e9724e7d49c085dc52ded4a6f9a

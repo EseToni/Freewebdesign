@@ -3,17 +3,17 @@ import CardAbout from "@components/CardAbout.astro";
 import Bento from "./Bento.astro";
 ---
 
-<section class="flex w-full justify-center">
-  <div class="relative w-[928px] flex flex-col gap-8">
+<section class="flex w-full justify-center z-0">
+  <div class="relative w-[928px] flex flex-col gap-8  ">
     <div class="flex flex-col gap-4">
-      <h2 class="text-4xl font-black">¿Por qué elegir FreeWebsDesign?</h2>
-      <p class="text-base text-wrap">
-        FreeWebsdesign ofrece la creación completamente gratutita de un sitio web, donde obtendras una pagina completamente diseñada para tu negocio o proyecto, únicamente pagarás el alojamiento de ese sitio web.
+      <h2 class="text-4xl font-black tracking-widest">¿Por qué elegir Freewebdesign?</h2>
+      <p class="lg:text-lg text-wrap font-medium tracking-wide">
+        <strong class="tracking-tighter ">Freewebdesign</strong> ofrece la creación <strong>completamente gratutita</strong> de un sitio web, donde obtendras una pagina completamente <strong>diseñada</strong> para tu negocio o proyecto, únicamente pagarás el alojamiento de ese sitio web.
       </p>
     </div>
     <Bento />
     <div
-    class="grid grid-cols-1 md:grid-cols-2 gap-x-4 lg:grid-cols-3 grid-rows-3 md:grid-rows-2 lg:grid-rows-1"
+    class="grid grid-cols-1 gap-y-4 lg:gap-y-0 md:grid-cols-2 gap-x-4 lg:grid-cols-3 grid-rows-3 md:grid-rows-2 lg:grid-rows-1"
     >
       <CardAbout
         title="Diseño personalizado"
@@ -33,9 +33,8 @@ import Bento from "./Bento.astro";
         >
       </CardAbout>
 
-	  <CardAbout title="Rendimiento" description="Cargas rapida, posicionamiento SEO.">
+	  <CardAbout title="Rendimiento" description="Cargas rapida, el mejor posicionamiento de SEO.">
         <svg
-          xmlns="http://www.w3.org/2000/svg"
           width="30"
           height="30"
           viewBox="0 0 24 24"
@@ -51,11 +50,10 @@ import Bento from "./Bento.astro";
       </CardAbout>
 
       <CardAbout
-        title="Suporte"
-        description="Soporte 24/7."
+        title="Suporte 24/7"
+        description="Estamos contigo a tu lado para ayudarte."
       >
         <svg
-          xmlns="http://www.w3.org/2000/svg"
           width="30"
           height="30"
           viewBox="0 0 24 24"
