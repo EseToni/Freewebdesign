@@ -48,9 +48,6 @@
     <a href="https://freewebdesign.onrender.com/" target="_blank">
       <img src="portada.png"/>
     </a>
-    <a href="https://freewebdesign.onrender.com/" target="_blank">
-      <img src="portada_movil.png />
-    </a>
 
 ## 🛠️ Stack
 
